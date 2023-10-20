@@ -8,7 +8,7 @@ namespace sprite_collisions
     {
         protected Texture2D _texture;
 
-        public Vector2 Position;
+        public Vector2 Position;    // position is the top left corner of the sprite texture
         public Vector2 Velocity = Vector2.Zero;
         public Color Color = Color.White;
         public float speed;
@@ -16,10 +16,10 @@ namespace sprite_collisions
         public string Tag = "";
         public string debugString = "";
     
-        // Creating this Rectangle Property with a public get method allows for collision detection algorithm to access it
+        // This Rectangle is the Sprite object's collider
         public Rectangle Rectangle
         {
-            get
+            get     // Creating this Rectangle Property with a public get method allows for collision detection algorithm to access it
             {
                 return new Rectangle((int)Position.X, (int)Position.Y, _texture.Width, _texture.Height);
             }
